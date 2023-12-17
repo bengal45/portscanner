@@ -2,7 +2,7 @@ import socket
 
 # Define target and port range
 TARGET = "127.0.0.1" # Insert target IP here
-PORTS = range(1, 444)
+PORTS = range(1, 1024)
 TIMEOUT = 0.8
 
 # Function to connect to port and retrieve banner
