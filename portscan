@@ -18,6 +18,8 @@ def get_banner(ip, port):
     return banner
   except:
     return # Returns an error if there is any.
+  finally:
+      sock.close()
 
 if __name__ == "__main__":
 
