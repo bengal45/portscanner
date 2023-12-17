@@ -1,14 +1,14 @@
 import socket
 
 # Define target and port range
-TARGET = "127.0.0.1" # Insert target IP here.
+TARGET = "127.0.0.1" # Insert target IP here
 PORTS = range(1, 444)
 TIMEOUT = 0.8
 
 # Function to connect to port and retrieve banner
 def get_banner(ip, port):
   try:
-    # Create sockets socket to the target.
+    # Create sockets socket to the target
     sock = socket.socket()
     sock.settimeout(TIMEOUT)
     sock.connect((ip, port))
@@ -17,21 +17,21 @@ def get_banner(ip, port):
     banner = sock.recv(1024)
     return banner
   except:
-    return # Returns an error if there is any.
+    return # Returns an error if there is any
   finally:
       sock.close()
 
 if __name__ == "__main__":
 
   for port in PORTS:
-    # Gets the a banner from the port
+    # Gets the banner from the port
     banner = get_banner(TARGET, port)
     # If a banner is printed, the port is open
     if banner:
-      # Print port and banner details
+      # Print port and the banner information
       print("[+] Port {}: Closed".format(port))
       print(banner)
       print("-" * 30)
-    # If there is no banner, the port is closed.
+    # If there is no banner, the port is closed
     else:
       print("[-] Port {}: Closed".format(port))
