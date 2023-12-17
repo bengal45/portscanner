@@ -29,7 +29,7 @@ if __name__ == "__main__":
     # If a banner is printed, the port is open
     if banner:
       # Print port and the banner information
-      print("[+] Port {}: Closed".format(port))
+      print("[+] Port {}: Open".format(port))
       print(banner)
       print("-" * 30)
     # If there is no banner, the port is closed
